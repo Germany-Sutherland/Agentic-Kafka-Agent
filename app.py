@@ -317,3 +317,49 @@ st.caption(
     "Tech: Streamlit UI • requests for APIs • in-memory append-only log simulating Kafka topic. "
     "APIs used: Open-Meteo (weather), CoinDesk (BTC), IPify (IP)."
 )
+# --- Footer / Detailed Left Panel Explanation ---
+st.markdown("---")
+st.markdown(
+    """
+    ## 📘 Left Panel – Detailed Explanation
+
+    ### 1) Latitude (°)
+    - **What it controls:** Sets the geographic latitude used by the app for location-based features like weather, IoT, or geofencing.
+    - **Valid range:** `-90.0` (South Pole) to `+90.0` (North Pole).
+    - **Example:** `28.6139` for New Delhi.
+
+    ### 2) Longitude (°)
+    - **What it controls:** Sets the geographic longitude paired with the latitude.
+    - **Valid range:** `-180.0` (west) to `+180.0` (east).
+    - **Example:** `77.2090` for New Delhi.
+
+    ### 3) Kafka Cluster Details
+    - **Purpose:** Connects the app to a running Kafka cluster for streaming data.
+    - **Fields:** Broker URL, authentication settings, topic name.
+    - **Example:** `localhost:9092` for local testing.
+
+    ### 4) API Credentials
+    - **Purpose:** Stores secure API keys or tokens for external integrations.
+    - **Example:** Weather API key, Kafka REST Proxy credentials.
+    - **Security Tip:** Never hardcode secrets in public GitHub repos — use environment variables.
+
+    ### 5) Topic Selection
+    - **Purpose:** Chooses which Kafka topic data will be sent to or read from.
+    - **Example:** `iot_sensor_stream` for IoT devices, `user_activity` for app logs.
+
+    ### 6) Real-Time Control Options
+    - **Purpose:** Control app behavior dynamically without redeploying.
+    - **Examples:** Toggle simulation mode, choose refresh intervals, enable live dashboards.
+
+    ### 7) Visual Grouping (Mental Model)
+    - **Purpose:** Groups inputs in the sidebar to match real Kafka pipeline stages.
+    - **Group Example:**
+        - **Data Input Controls:** Latitude, Longitude.
+        - **Kafka Connection:** Cluster details, credentials, topic.
+        - **Output & Visualization:** Stream output toggles, chart settings.
+    - **Benefit:** Helps non-technical users understand data flow visually.
+
+    ---
+    ✅ *This panel is designed for quick setup, testing, and demonstrating real Kafka architecture in action, even for MVPs.*
+    """
+)
