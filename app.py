@@ -363,3 +363,83 @@ st.markdown(
     ✅ *This panel is designed for quick setup, testing, and demonstrating real Kafka architecture in action, even for MVPs.*
     """
 )
+# ==============================
+# Add "How to Use This App" section at the very end
+# ==============================
+st.markdown("""
+---
+
+## **How to Use This App – Step-by-Step**
+
+1. **Open the Web App**  
+   - Visit the link of this Streamlit app in your browser.  
+
+2. **Wait for the App to Load**  
+   - The app fetches data in real time from multiple APIs, so give it a few seconds.  
+
+3. **Look at the Data Table**  
+   - You will see a table with several columns:  
+     - **ts** → The date and time when data was fetched.  
+     - **api** → The name of the API called.  
+     - **status** → Whether the API is working (`OK`) or not (`DOWN`).  
+     - **latency_s** → How many seconds the API took to respond.  
+     - **temperature_c**, **price_usd**, **ip** → The actual data returned.  
+     - **error** → If something went wrong, the error message appears here.  
+
+4. **Understand the Status**  
+   - If status is `OK`, the API is working fine.  
+   - If status is `DOWN`, the API is not responding or failed.  
+
+5. **Check the Latency**  
+   - Lower numbers mean faster response times.  
+   - Very high numbers may indicate a slow API or network issues.  
+
+6. **Look at the Data**  
+   - For weather: temperature in °C.  
+   - For Bitcoin: current USD price.  
+   - For IP address: your public IP.  
+
+7. **Check for Errors**  
+   - If there is an error, you can see the technical reason (for developers).  
+
+8. **Refresh the Page**  
+   - Reloading will fetch the latest data from APIs.  
+
+9. **Watch for API Downtime**  
+   - If an API is `DOWN`, you might want to try later or switch to another data source.  
+
+10. **Use it for Monitoring**  
+    - Keep the app open to track live API health and performance.  
+
+11. **Combine with Alerts (Optional)**  
+    - Developers can extend this app to send alerts if an API is down.  
+
+12. **Test Your Own APIs (Optional)**  
+    - You can modify the code to add your own APIs for monitoring.  
+
+13. **Understand the Data Flow**  
+    - APIs → Kafka (or simulated stream) → Streamlit Table → Your Browser.  
+
+14. **No Installation Needed**  
+    - You can use it directly in the browser, no software download.  
+
+15. **Access from Anywhere**  
+    - Works on desktop, laptop, or mobile browser.  
+
+16. **Check Time Zone**  
+    - Timestamps are in the server’s time zone (may differ from your local time).  
+
+17. **Keep Internet On**  
+    - The app needs a working internet connection to fetch data.  
+
+18. **Simple for Non-Tech Users**  
+    - Just read the table — no commands, no coding required.  
+
+19. **For Developers**  
+    - The backend code can be found in GitHub to modify and improve.  
+
+20. **Portfolio Showcase**  
+    - This app demonstrates skills in APIs, real-time data streaming, error handling, and dashboards.  
+
+---
+""")
