@@ -1,2 +1,2 @@
 streamlit
-confluent-kafka
+kafka-python
